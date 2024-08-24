@@ -37,6 +37,7 @@ The P2P Transfer Module is organized using the MVC (Model-View-Controller) archi
 - **`app.py`**: Main entry point of the application.
 - **`config.py`**: Configuration settings for different environments.
 - **`extensions.py`**: Extensions setup (e.g., database, JWT, Migrate).
+- **`logger.py`**: Logger setup.
 - **`requirements.txt`**: Python dependencies.
 
 ## Installation
