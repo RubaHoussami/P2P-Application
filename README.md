@@ -27,8 +27,8 @@ The P2P Transfer Module is organized using the MVC (Model-View-Controller) archi
 
 - **`/migrations`**: Database migrations managed by Flask-Migrate.
 - **`/src`**: Core application code.
-  - **`/api/v1/**
-      - **/controllers`**: Flask routes for handling API requests.
+  - **`/api/v1/`**
+      - **`/controllers`**: Flask routes for handling API requests.
       - **`/schemas`**: Marshmallow schemas for data serialization and validation.
   - **`/models`**: SQLAlchemy models for the database schema.
   - **`/services`**: Business logic handling P2P transfers, account management, and more.
