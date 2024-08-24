@@ -56,8 +56,8 @@ The P2P Transfer Module is organized using the MVC (Model-View-Controller) archi
 
 3. Configure your environment variables in a `.env` file:
     ```bash
-    FLASK_ENV=development
-    DATABASE_URL=your_database_url
+    FLAS_ENV=development
+    SQLALCHEMY_DATABASE_URI=your_database_url
     ...
     ```
 
