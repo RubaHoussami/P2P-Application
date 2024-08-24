@@ -56,13 +56,15 @@ The P2P Transfer Module is organized using the MVC (Model-View-Controller) archi
 
 3. Configure your environment variables in a `.env` file:
     ```bash
-    FLASK_APP=app.py
     FLASK_ENV=development
     DATABASE_URL=your_database_url
+    ...
     ```
 
-4. Run database migrations:
+4. Initialize database and run database migrations:
     ```bash
+    flask db init
+    flask db migrate
     flask db upgrade
     ```
 
@@ -75,6 +77,7 @@ The P2P Transfer Module is organized using the MVC (Model-View-Controller) archi
 
 To run the unit tests:
 ```bash
+set FLASK_ENV=testing
 pytest
 ```
 
