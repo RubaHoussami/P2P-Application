@@ -83,3 +83,7 @@ To get a coverage report:
 coverage run -m pytest
 coverage report
 ```
+
+## License
+
+This project is licensed under the MIT License.
