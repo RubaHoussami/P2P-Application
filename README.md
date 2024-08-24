@@ -76,8 +76,10 @@ The P2P Transfer Module is organized using the MVC (Model-View-Controller) archi
 To run the unit tests:
 ```bash
 pytest
+```
 
 To get a coverage report:
 ```bash
 coverage run -m pytest
 coverage report
+```
