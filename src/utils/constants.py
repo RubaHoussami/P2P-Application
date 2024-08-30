@@ -10,3 +10,4 @@ class TransactionType(Enum):
     TRANSFER = "TRANSFER"
 
 currency_map = {currency.value: currency.name for currency in Currency}
+inverse_currency_map = {currency.name: currency.value for currency in Currency}

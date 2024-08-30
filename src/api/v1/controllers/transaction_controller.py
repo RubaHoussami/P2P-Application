@@ -10,7 +10,7 @@ from extensions import db
 transaction_bp = Blueprint("transaction", __name__)
 
 
-@transaction_bp.post('/transfer')
+@transaction_bp.put('/transfer')
 @jwt_required()
 def transfer():
     """
@@ -69,7 +69,7 @@ def transfer():
 
     return jsonify(result), status
 
-@transaction_bp.post('/deposit')
+@transaction_bp.put('/deposit')
 @jwt_required()
 def deposit():
     """
@@ -116,7 +116,7 @@ def deposit():
 
     return jsonify(result), status
 
-@transaction_bp.post('/withdraw')
+@transaction_bp.put('/withdraw')
 @jwt_required()
 def withdraw():
     """

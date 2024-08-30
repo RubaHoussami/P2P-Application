@@ -5,6 +5,7 @@ from src.models.account_model import Account
 from src.models.user_model import User
 from src.services.user_service import UserService
 from src.utils.constants import currency_map, TransactionType
+from src.utils.constants import inverse_currency_map
 
 
 class AccountService():
@@ -31,7 +32,7 @@ class AccountService():
         user_id = user.id
         date = datetime.now()
 
-        account = Account(user_id=user_id, currency=currency, date=date)
+        account = Account(user_id=user_id, currency=inverse_currency_map.get(currency), date=date)
 
         self.db_session.add(account)
         self.db_session.commit()

@@ -23,7 +23,8 @@ def create_app():
     app = Flask(__name__)
 
     config_name = os.getenv('FLASK_ENV', 'default')
-    app.config.from_object(config[config_name]())
+    configuration = config[config_name]()
+    app.config.from_object(configuration)
 
     db.init_app(app)
     jwt.init_app(app)
@@ -40,12 +41,6 @@ def create_app():
 
     jwt.token_in_blocklist_loader(check_if_token_revoked)
 
-    return app
-
-def create_swagger(app):
-    config_name = os.getenv('FLASK_ENV', 'default')
-    configuration = config[config_name]()
-
     swagger = Swagger(app, template={
         "info": {
             "title": configuration.APP_NAME,
@@ -54,13 +49,11 @@ def create_swagger(app):
             }
         }
     )
-    
-    return swagger
+
+    return app
+
 
 if __name__ == '__main__':
     app = create_app()
-
-    swagger = create_swagger(app)
-
     logger.info('Starting flask application')
     app.run()

@@ -10,7 +10,7 @@ from extensions import db
 account_bp = Blueprint("account", __name__)
 
 
-@account_bp.post('/create')
+@account_bp.put('/create')
 @jwt_required()
 def create():
     """
@@ -29,7 +29,7 @@ def create():
         in: formData
         type: string
         required: true
-        description: The currency for the account (either 422 for LBP or 840 for USD).
+        description: The currency for the account (either LBP or USD).
     security:
       - BearerAuth: []
     responses:
@@ -52,7 +52,7 @@ def create():
 
     return jsonify(result), status
 
-@account_bp.get('/balance')
+@account_bp.post('/balance')
 @jwt_required()
 def balance():
     """

@@ -54,7 +54,7 @@ def login():
 
     return jsonify(result), status
 
-@user_bp.post('/register')
+@user_bp.put('/register')
 def register():
     """
     ---
