@@ -25,7 +25,7 @@ def transfer():
         type: string
         required: true
         description: Respond with **'Bearer &lt;JWT&gt;'**, where JWT is the access token.
-      - naem: id
+      - name: id
         in: formData
         type: integer
         required: true
