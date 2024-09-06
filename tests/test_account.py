@@ -32,7 +32,7 @@ def test_view_transaction_history(client, response, account_response):
     access_token = response.json['user']['access']
     account_id = account_response.json['account id']
 
-    response = client.get('/account/view-transaction-history', data={'id': account_id}, headers={'Authorization': f'Bearer {access_token}'})
+    response = client.post('/account/view-transaction-history', data={'id': account_id}, headers={'Authorization': f'Bearer {access_token}'})
     assert response.status_code == 200
     assert response.json['message'] == 'Transaction history retrieved successfully'
     assert 'transactions' in response.json
