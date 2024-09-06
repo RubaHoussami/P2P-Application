@@ -94,7 +94,7 @@ def balance():
 
     return jsonify(result), status
 
-@account_bp.get('/view-transaction-history')
+@account_bp.post('/view-transaction-history')
 @jwt_required()
 def transaction_history():
     """
